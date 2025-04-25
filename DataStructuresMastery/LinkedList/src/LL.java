@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 @SuppressWarnings("unchecked")
@@ -68,4 +69,32 @@ public class LL<T> implements Iterable<T>{
         }
         return current.data;
     }
+    @Override
+    public Iterator<T> iterator(){
+        return new Iterator<T>(){
+            private Node<T> current = head;
+            @Override
+            public boolean hasNext(){
+                return current != null;
+            }
+            @Override
+            public T next(){
+                if(!hasNext()) throw new NoSuchElementException();
+                T data = current.data;
+                current = current.next;
+                return data;
+            }
+        };
+    }
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        Node<T> current = head;
+        while(current != null){
+            sb.append(current.data).append("->");
+            current = current.next;
+        }
+        return sb.append("null").toString();
+    }
+
 }
