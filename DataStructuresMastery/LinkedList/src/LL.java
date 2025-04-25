@@ -1,8 +1,6 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import javax.print.DocFlavor.INPUT_STREAM;
-
 @SuppressWarnings("unchecked")
 public class LL<T> implements Iterable<T>{
     private static  class Node<T>{
