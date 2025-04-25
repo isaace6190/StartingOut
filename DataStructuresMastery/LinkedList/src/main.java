@@ -8,7 +8,11 @@ public class main {
         list.addFirst(4);
         list.addLast(5);
 
+        list.addAt(2, 8);
+
         System.out.println(list);
+
+
 
     }
 }

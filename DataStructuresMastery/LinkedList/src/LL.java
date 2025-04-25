@@ -1,6 +1,8 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+import javax.print.DocFlavor.INPUT_STREAM;
+
 @SuppressWarnings("unchecked")
 public class LL<T> implements Iterable<T>{
     private static  class Node<T>{
@@ -41,6 +43,21 @@ public class LL<T> implements Iterable<T>{
             }
             current.next = newNode;
         }
+        size++;
+    }
+    public void addAt(int index, T data){
+        if(index < 0 || index >= size)throw new IndexOutOfBoundsException();
+        if(index == 0){
+            addFirst(data);
+            return;
+        }
+        Node<T> current = head;
+        for(int i = 1; i < index; i++){
+            current = current.next;
+        }
+        Node<T> newNode = new Node<>(data);
+        newNode.next = current.next;
+        current.next = newNode;
         size++;
     }
     public T removeFirst(){
