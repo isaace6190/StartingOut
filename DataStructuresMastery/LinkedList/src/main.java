@@ -1,6 +1,6 @@
 public class main {
     public static void main(String[] args) {
-        LL<Integer> list = new LL<>();
+        LL1<Integer> list = new LL1<>();
 
         list.addFirst(1);
         list.addFirst(2);
