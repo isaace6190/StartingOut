@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-@SuppressWarnings("uncheked")
+@SuppressWarnings("unchecked")
 public class LL1<T> implements Iterable<T>{
     private static class Node<T>{
         T data;
